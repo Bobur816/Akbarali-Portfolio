@@ -31,9 +31,9 @@ function Cards({type = ""}) {
 	// const finalData = projects;
 
 	// console.log(dataLocal);
-	const sorted = projects.filter((project) => project.isSelected);
+	// const sorted = projects.filter((project) => project.isSelected);
 
-	const sortedProjects = type === "selected" ? sorted : projects;
+	// const sortedProjects = type === "selected" ? sorted : projects;
 
 	// console.log(projects);
 	// const projects = data.at(0);
@@ -45,7 +45,7 @@ function Cards({type = ""}) {
 	if (isLoading) return <Spinner />;
 	return (
 		<StyledCards>
-			{sortedProjects.map((project) => (
+			{projects.map((project) => (
 				<CardItem project={project} key={project.id} />
 			))}
 		</StyledCards>
