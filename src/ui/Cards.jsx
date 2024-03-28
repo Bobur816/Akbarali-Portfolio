@@ -28,7 +28,7 @@ function Cards({type = ""}) {
 
 	const dataLocal = JSON.parse(localStorage.getItem("projects"));
 
-	const finalData = projects || dataLocal;
+	const finalData = projects;
 
 	// console.log(dataLocal);
 	const sorted = finalData.filter((project) => project.isSelected);
