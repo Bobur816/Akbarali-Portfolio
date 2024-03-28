@@ -20,11 +20,18 @@ const StyledCards = styled.ul`
 		grid-template-columns: 1fr;
 	}
 `;
-function Cards() {
+function Cards({type = ""}) {
 	const {isLoading, data: projects} = useQuery({
 		queryKey: ["Projects"],
 		queryFn: getProjects,
 	});
+
+	const dataLocal = JSON.parse(localStorage.getItem("projects"));
+
+	// console.log(dataLocal);
+	const sorted = dataLocal.filter((project) => project.isSelected);
+
+	const sortedProjects = type === "selected" ? sorted : dataLocal;
 
 	// console.log(projects);
 	// const projects = data.at(0);
@@ -36,7 +43,7 @@ function Cards() {
 	if (isLoading) return <Spinner />;
 	return (
 		<StyledCards>
-			{projects.map((project) => (
+			{sortedProjects.map((project) => (
 				<CardItem project={project} key={project.id} />
 			))}
 		</StyledCards>

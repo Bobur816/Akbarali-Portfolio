@@ -9,6 +9,7 @@ export async function getProjects() {
 	}
 
 	// console.log(data);
+	localStorage.setItem("projects", JSON.stringify(data));
 
 	return data;
 }

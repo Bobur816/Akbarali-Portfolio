@@ -7,7 +7,7 @@ function Dashboard() {
 		<>
 			<HeadDashboard />
 			<Heading type="middle">Selected Work</Heading>
-			<Cards />
+			<Cards type="selected" />
 		</>
 	);
 }

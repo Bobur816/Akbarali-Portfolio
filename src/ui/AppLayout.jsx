@@ -54,7 +54,7 @@ function AppLayout() {
 	return (
 		<StyledAppLayout>
 			<MobileTop>
-				<Img src="user.svg" alt="user-img" />
+				<Img src="https://qlexuncemojoapbkrvse.supabase.co/storage/v1/object/public/images/user.svg" alt="user-img" />
 				<ToggleButton onClick={() => setIsOpen((open) => !open)}>
 					<HiBars3 />
 				</ToggleButton>

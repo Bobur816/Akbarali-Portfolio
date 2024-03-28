@@ -33,7 +33,8 @@ const StyledJob = styled.p`
 function Avatar() {
 	return (
 		<StyledAvatar>
-			<Img src="user.svg" alt="user-img" />
+			<Img src="https://qlexuncemojoapbkrvse.supabase.co/storage/v1/object/public/images/user.svg" alt="user-img" />
+			{/* <img src="user.svg" alt="user-img" /> */}
 			<AvatarInfo>
 				<StyledName>Akbarali Xasanov</StyledName>
 				<StyledJob>UX/UI Designer</StyledJob>

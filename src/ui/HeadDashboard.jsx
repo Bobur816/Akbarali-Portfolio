@@ -5,6 +5,7 @@ import InfoParagraph from "../ui/InfoParagraph";
 import Button from "../ui/Button";
 import {LuDownload} from "react-icons/lu";
 import CopyEmailButton from "./CopyEmailButton";
+import {useTypewriter, Cursor} from "react-simple-typewriter";
 
 const StyledHeadText = styled.h1`
 	font-size: 4.8rem;
@@ -15,9 +16,10 @@ const StyledHeadText = styled.h1`
 
 	& span {
 		color: #7d7f83;
+		/* width: 200px; */
 		/* margin-left: 10px; */
-		padding: 0 10px;
-		border-right: 5px solid #7d7f83;
+		/* padding: 0 10px; */
+		/* border-right: 5px solid #7d7f83; */
 	}
 `;
 
@@ -35,13 +37,21 @@ const ButtonBox = styled.div`
 `;
 
 function HeadDashboard() {
+	const [text] = useTypewriter({
+		words: ["Website", "Mobile", "Product"],
+		loop: {},
+		typeSpeed: 120,
+		deleteSpeed: 40,
+	});
 	return (
 		<>
 			<Status />
 			<StyledHeadText>
 				Hey, I'm Akbarali👏
-				<br /> I design
-				<span>website</span>
+				<br /> I design <span>{text}</span>
+				<span>
+					<Cursor />
+				</span>
 			</StyledHeadText>
 			<LocationPoint />
 			<InfoParagraph type="medium">

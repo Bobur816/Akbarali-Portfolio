@@ -71,8 +71,8 @@ function About() {
 					Hey, I'm Akbarali. I'm a designer and software tinkerer. I am currently working as a UX/UI designer at{" "}
 					<a href="https://itic.uz/" target="blank">
 						IT Investments Center
-					</a>
-					Academy and{" "}
+					</a>{" "}
+					I also mentor at{" "}
 					<a href="https://uacademy.uz/" target="blank">
 						Uacademy
 					</a>
@@ -90,7 +90,7 @@ function About() {
 				</Paragraph>
 				<TableExperiance />
 			</Info>
-			<img src="user.svg" alt="user-img" />
+			<img src="https://qlexuncemojoapbkrvse.supabase.co/storage/v1/object/public/images/user.svg" alt="user-img" />
 		</StyledAbout>
 	);
 }

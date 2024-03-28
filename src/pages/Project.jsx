@@ -68,20 +68,19 @@ const Tag = styled.span`
 function Project() {
 	const {id: projectId} = useParams();
 	// console.log(projectId);
-	const {data} = useQuery({
-		queryKey: ["Projects"],
-		// queryFn: (projectId) => getProjectData(projectId),
-		queryFn: getProjects,
-	});
+	// const {data} = useQuery({
+	// 	queryKey: ["Projects"],
+	// 	// queryFn: (projectId) => getProjectData(projectId),
+	// 	queryFn: getProjects,
+	// });
 
-	const projects = data;
+	const projects = JSON.parse(localStorage.getItem("projects"));
 
 	const project = projects.find((project) => project.id === Number(projectId));
 	// console.log(project);
 
 	const {name, description, timeline, role, imageCollection, projectLink} = project;
 	const navigate = useNavigate();
-	console.log(projectLink);
 
 	// console.log(projects);
 

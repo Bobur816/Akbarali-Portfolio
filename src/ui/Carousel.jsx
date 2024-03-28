@@ -6,7 +6,10 @@ import {IoIosArrowBack, IoIosArrowForward} from "react-icons/io";
 const StyledCarousel = styled.div`
 	position: relative;
 	width: 100%;
-	height: 600px;
+	height: 750px;
+	@media (max-width: 1440px) {
+		height: 600px;
+	}
 	display: flex;
 	border-radius: 12px;
 
