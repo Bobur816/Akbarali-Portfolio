@@ -28,10 +28,12 @@ function Cards({type = ""}) {
 
 	const dataLocal = JSON.parse(localStorage.getItem("projects"));
 
-	// console.log(dataLocal);
-	const sorted = dataLocal.filter((project) => project.isSelected);
+	const finalData = projects || dataLocal;
 
-	const sortedProjects = type === "selected" ? sorted : dataLocal;
+	// console.log(dataLocal);
+	const sorted = finalData.filter((project) => project.isSelected);
+
+	const sortedProjects = type === "selected" ? sorted : finalData;
 
 	// console.log(projects);
 	// const projects = data.at(0);
