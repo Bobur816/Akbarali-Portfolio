@@ -6,6 +6,7 @@ import {FaUserCheck} from "react-icons/fa6";
 const StyledInfoBox = styled.div`
 	/* background-color: red; */
 	display: flex;
+	margin-bottom: 48px;
 	@media (max-width: 768px) {
 		flex-direction: column;
 	}

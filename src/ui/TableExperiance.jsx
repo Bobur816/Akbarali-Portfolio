@@ -50,31 +50,41 @@ function TableExperiance() {
 			<p>Work</p>
 			<div>
 				<Entry>
-					<a href="https://www.linkedin.com/company/it-investments-center/?originalSubdomain=uz">IT Invesments Center</a>
+					<a href="https://www.linkedin.com/company/it-investments-center/?originalSubdomain=uz" target="blank">
+						IT Invesments Center
+					</a>
 					<ins></ins>
 					UX/UI Designer
 					<span>Feb, 2024-Present</span>
 				</Entry>
 				<Entry>
-					<a href="https://udevs.io/">Udevs</a>
+					<a href="https://udevs.io/" target="blank">
+						Udevs
+					</a>
 					<ins></ins>
 					UX/UI Designer
 					<span>July, 2023 - Jan, 2024</span>
 				</Entry>
 				<Entry>
-					<a href="https://uacademy.uz/">Uacademy</a>
+					<a href="https://uacademy.uz/" target="blank">
+						Uacademy
+					</a>
 					<ins></ins>
 					UX/UI Designer Mentor
 					<span>Nov, 2023 - Feb, 2024</span>
 				</Entry>
 				<Entry>
-					<a href="https://kwork.ru/user/akbaralikhasanov">Tow Truck</a>
+					<a href="https://kwork.ru/user/akbaralikhasanov" target="blank">
+						Tow Truck
+					</a>
 					<ins></ins>
 					Product Designer
 					<span>May, 2023-</span>
 				</Entry>
 				<Entry>
-					<a href="https://kwork.ru/user/akbaralikhasanov">Kwork</a>
+					<a href="https://kwork.ru/user/akbaralikhasanov" target="blank">
+						Kwork
+					</a>
 					<ins></ins>
 					Designer & Android developer
 					<span>May, 2020-</span>
@@ -83,19 +93,25 @@ function TableExperiance() {
 			<p>Education</p>
 			<div>
 				<Entry>
-					<a href="https://tuit.uz/">TUIT</a>
+					<a href="https://tuit.uz/" target="blank">
+						TUIT
+					</a>
 					<ins></ins>
 					Television tecnology
 					<span>Aug, 2019 - June, 2023</span>
 				</Entry>
 				<Entry>
-					<a href="https://online.pdp.uz/">PDP Academy</a>
+					<a href="https://online.pdp.uz/" target="blank">
+						PDP Academy
+					</a>
 					<ins></ins>
 					Android Developer
 					<span>Oct, 2019 - July,2020</span>
 				</Entry>
 				<Entry>
-					<a href="https://online-oscar.uz/">Oscar School</a>
+					<a href="https://online-oscar.uz/" target="blank">
+						Oscar School
+					</a>
 					<ins></ins>
 					UX/UI Designer
 					<span>---------</span>

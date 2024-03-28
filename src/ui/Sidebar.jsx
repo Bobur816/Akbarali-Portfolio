@@ -24,11 +24,11 @@ const StyledSidebar = styled.aside`
 	}
 `;
 
-function Sidebar({isopen}) {
+function Sidebar({isopen, setIsOpen}) {
 	return (
 		<StyledSidebar isopen={isopen}>
 			<Avatar />
-			<MainNav />
+			<MainNav setIsOpen={setIsOpen} />
 			<Social />
 		</StyledSidebar>
 	);

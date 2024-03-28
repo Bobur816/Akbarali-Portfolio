@@ -10,15 +10,19 @@ const StyledCardItem = styled.li`
 
 	&:hover img {
 		transition: all 0.3s;
-		transform: scale(1.1);
+		transform: scale(1.07);
 	}
 `;
 
 const ImgBox = styled.div`
 	/* background-color: green; */
-	height: 32rem;
+	height: 50rem;
 	border-radius: 12px;
 	overflow: hidden;
+
+	@media (max-width: 1440px) {
+		height: 32rem;
+	}
 `;
 
 const ProjectImg = styled.img`

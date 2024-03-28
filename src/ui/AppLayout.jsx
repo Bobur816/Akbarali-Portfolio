@@ -59,7 +59,7 @@ function AppLayout() {
 					<HiBars3 />
 				</ToggleButton>
 			</MobileTop>
-			<Sidebar isopen={isOpen} />
+			<Sidebar isopen={isOpen} setIsOpen={setIsOpen} />
 			<Main>
 				<Outlet />
 			</Main>

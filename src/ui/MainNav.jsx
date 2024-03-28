@@ -50,10 +50,10 @@ const StyledNavLink = styled(NavLink)`
 	}
 `;
 
-function MainNav({isOpen}) {
+function MainNav({isOpen, setIsOpen}) {
 	return (
 		<nav>
-			<NavList isOpen={isOpen}>
+			<NavList isOpen={isOpen} onClick={() => setIsOpen(false)}>
 				<li>
 					<StyledNavLink to="/dashboard">
 						<HiMiniHome />
