@@ -14,13 +14,12 @@ export async function getProjects() {
 	return data;
 }
 
-export async function getProjectData(id) {
-	console.log(id);
-	const {data, error} = await supabase.from("Projects").select(id);
+export async function getSelectedProjects() {
+	let {data, error} = await supabase.from("Projects").select().eq("isSelected", true);
 
 	if (error) {
 		console.error(error);
-		throw new Error("Project could not be loaded");
+		throw new Error("SelectedProjects could not be loaded");
 	}
 
 	// console.log(data);

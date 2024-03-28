@@ -20,13 +20,11 @@ const StyledCards = styled.ul`
 		grid-template-columns: 1fr;
 	}
 `;
-function Cards({type = ""}) {
+function SelectedCards() {
 	const {isLoading, data: projects} = useQuery({
-		queryKey: ["Projects"],
-		queryFn: type === "selected" ? getSelectedProjects : getProjects,
+		queryKey: ["SelectedProjects"],
+		queryFn: getSelectedProjects,
 	});
-
-	console.log(projects);
 
 	// const dataLocal = JSON.parse(localStorage.getItem("projects"));
 
@@ -54,4 +52,4 @@ function Cards({type = ""}) {
 	);
 }
 
-export default Cards;
+export default SelectedCards;
