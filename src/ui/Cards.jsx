@@ -26,14 +26,14 @@ function Cards({type = ""}) {
 		queryFn: getProjects,
 	});
 
-	const dataLocal = JSON.parse(localStorage.getItem("projects"));
+	// const dataLocal = JSON.parse(localStorage.getItem("projects"));
 
-	const finalData = projects;
+	// const finalData = projects;
 
 	// console.log(dataLocal);
-	const sorted = finalData.filter((project) => project.isSelected);
+	const sorted = projects.filter((project) => project.isSelected);
 
-	const sortedProjects = type === "selected" ? sorted : finalData;
+	const sortedProjects = type === "selected" ? sorted : projects;
 
 	// console.log(projects);
 	// const projects = data.at(0);
