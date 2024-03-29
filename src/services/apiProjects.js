@@ -10,12 +10,24 @@ export async function getProjects() {
 
 	// console.log(data);
 	localStorage.setItem("projects", JSON.stringify(data));
-
 	return data;
 }
 
 export async function getSelectedProjects() {
 	let {data, error} = await supabase.from("Projects").select().eq("isSelected", true);
+
+	if (error) {
+		console.error(error);
+		throw new Error("SelectedProjects could not be loaded");
+	}
+
+	// console.log(data);
+	return data;
+}
+
+export async function getProjectData(id) {
+	console.log(id);
+	let {data, error} = await supabase.from("Projects").select("*").eq("id", id);
 
 	if (error) {
 		console.error(error);

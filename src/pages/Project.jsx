@@ -1,8 +1,6 @@
 import Heading from "../ui/Heading";
 import InfoParagraph from "../ui/InfoParagraph";
 import {useNavigate, useParams} from "react-router-dom";
-import {useQuery} from "@tanstack/react-query";
-import {getProjects} from "../services/apiProjects";
 import styled from "styled-components";
 import {IoIosArrowBack} from "react-icons/io";
 import Button from "../ui/Button";

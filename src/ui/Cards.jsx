@@ -23,10 +23,8 @@ const StyledCards = styled.ul`
 function Cards({type = ""}) {
 	const {isLoading, data: projects} = useQuery({
 		queryKey: ["Projects"],
-		queryFn: type === "selected" ? getSelectedProjects : getProjects,
+		queryFn: getProjects,
 	});
-
-	console.log(projects);
 
 	// const dataLocal = JSON.parse(localStorage.getItem("projects"));
 
