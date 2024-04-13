@@ -77,9 +77,11 @@ function Project() {
 	const project = projects.find((project) => project.id === Number(projectId));
 	// console.log(project);
 
-	const {name, description, timeline, role, imageCollection, projectLink} = project;
+	const {name, description, timeline, role, imageCollection, projectLink, tags} = project;
 	const navigate = useNavigate();
-
+	// tags = JSON.parse(tags);
+	const allTags = tags?.replace(/\[|\]/g, "").split(",");
+	// console.log();
 	// console.log(projects);
 
 	// console.log(data);
@@ -96,10 +98,7 @@ function Project() {
 				<IoIosArrowBack /> Back to list
 			</BackButton>
 			<ProjectContainer>
-				<TagBox>
-					<Tag>#web</Tag>
-					<Tag>#Figma</Tag>
-				</TagBox>
+				<TagBox>{allTags && allTags.map((tag) => <Tag key={Math.random()}>#{tag}</Tag>)}</TagBox>
 				<div>
 					<Heading type="large">{name}</Heading>
 					<InfoParagraph mb="0" type="small">

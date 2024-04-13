@@ -1,4 +1,3 @@
-import Cards from "../ui/Cards";
 import HeadDashboard from "../ui/HeadDashboard";
 import Heading from "../ui/Heading";
 import SelectedCards from "../ui/SelectedCards";
