@@ -21,6 +21,8 @@ export async function getSelectedProjects() {
 		throw new Error("SelectedProjects could not be loaded");
 	}
 
+	localStorage.setItem("projects", JSON.stringify(data));
+
 	// console.log(data);
 	return data;
 }
