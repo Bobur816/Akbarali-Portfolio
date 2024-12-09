@@ -1,0 +1,41 @@
+import supabase from "./supabase";
+
+export async function getProjects() {
+  const { data, error } = await supabase.from("Projects").select("*");
+
+  if (error) {
+    console.error(error);
+    throw new Error("Projects could not be loaded");
+  }
+
+  // console.log(data);
+  localStorage.setItem("projects", JSON.stringify(data));
+  return data;
+}
+
+export async function getSelectedProjects() {
+  let { data, error } = await supabase.from("Projects").select().eq("isSelected", true);
+
+  if (error) {
+    console.error(error);
+    throw new Error("SelectedProjects could not be loaded");
+  }
+
+  localStorage.setItem("projects", JSON.stringify(data));
+
+  // console.log(data);
+  return data;
+}
+
+export async function getProjectData(id: any) {
+  // return console.log(id);
+
+  // console.log(id);
+  let { data, error } = await supabase.from("Projects").select("*").eq("id", id);
+  if (error) {
+    console.error(error);
+    throw new Error("Project data could not be loaded");
+  }
+  // console.log(data);
+  return data;
+}

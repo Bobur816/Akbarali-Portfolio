@@ -1,0 +1,42 @@
+.table {
+  & > p {
+    color: var(--color-gray);
+    opacity: 0.58;
+  }
+
+  & > div {
+    margin-bottom: 2.4rem;
+  }
+
+  &-entry {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+    line-height: 1.4rem;
+    font-weight: 500;
+    /* background-color: red; */
+    margin-top: 0.8rem;
+    color: var(--color-gray);
+
+    & > ins {
+      flex-grow: 1;
+      border-bottom: 1px dashed #d4d4d4;
+      margin: 0.75rem;
+    }
+
+    &:hover {
+      color: var(--color-primary-green);
+    }
+    &:hover ins {
+      /* border-color: var(--color-primary-green); */
+      border-bottom: 1px dashed var(--color-primary-green);
+    }
+
+    & span {
+      color: var(--color-gray);
+      margin-left: 2.4rem;
+      opacity: 0.58;
+    }
+  }
+}

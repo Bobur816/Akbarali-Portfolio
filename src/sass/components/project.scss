@@ -1,0 +1,212 @@
+@use "../abstracts/mixins" as mixin;
+
+.center-layout {
+  @include mixin.center;
+  height: 100%;
+}
+
+.tag-item {
+  color: #c157ff;
+  border-radius: 0.1rem;
+  border: 0.5px solid rgba(193, 87, 255, 0.05);
+  background: rgba(193, 87, 255, 0.05);
+  padding: 0.1rem 0.2rem;
+  font-family: "Jersey 10";
+  font-size: 0.8rem;
+  font-style: normal;
+  font-weight: 250;
+  line-height: 0.6rem; /* 100% */
+  letter-spacing: 0.84px;
+}
+
+.project {
+  &-layout {
+    height: 100vh;
+    padding: 2.4rem;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: 0.8rem;
+  }
+
+  &-name {
+    align-items: center;
+    padding: 0 1.2rem;
+    font-family: Figtree;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.2rem; /* 100% */
+  }
+
+  &-carousel {
+    border-radius: 0.8rem;
+  }
+
+  &-info {
+    border-radius: 0.6rem;
+    border: 1px solid #232323;
+    background: #171717;
+    padding: 0.4rem;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    gap: 0.4rem;
+    .info-box {
+      display: flex;
+      border-radius: 0.4rem;
+      border: 1px solid #2e2e2e;
+      background: #242424;
+    }
+
+    &_top {
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 0.4rem;
+
+      .top-btn {
+        display: inline-block;
+        height: 2.8rem;
+        width: 2.8rem;
+        @include mixin.center;
+
+        svg {
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    h4 {
+      color: #767676;
+      font-family: "Jersey 10";
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 250;
+      line-height: 1rem; /* 142.857% */
+      margin-bottom: 0.4rem;
+    }
+
+    &_middle {
+      padding: 0.8rem 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 2.4rem;
+      ul {
+        display: flex;
+        gap: 0.2rem;
+      }
+
+      p {
+        font-family: Figtree;
+        font-size: 0.8rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 0.8rem; /* 100% */
+      }
+    }
+
+    &_bottom {
+      padding: 0.8rem 1.2rem;
+      flex-direction: column;
+      overflow-y: scroll;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      p {
+        color: #999;
+        font-family: Figtree;
+        font-size: 0.9rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 1.2rem; /* 150% */
+      }
+    }
+  }
+
+  &-carousel {
+    height: 100%;
+    overflow: hidden;
+
+    .swiper {
+      height: 100%;
+
+      &-pagination {
+        width: fit-content !important;
+        position: absolute;
+        left: 50% !important;
+        transform: translate(-50%);
+        padding: 0.4rem 0.6rem;
+        border-radius: 5rem;
+        border-radius: 300px;
+        background: rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(12.5px);
+        display: flex;
+        align-items: center;
+
+        &-bullet {
+          background-color: #d9d9d9;
+          opacity: 1;
+          &-active {
+            background-color: var(--color-primary-green) !important;
+          }
+        }
+      }
+
+      &-button-prev,
+      &-button-next {
+        height: 2.2rem;
+        width: 2.2rem;
+        border-radius: 50%;
+        background-color: var(--color-white);
+        &::after {
+          position: absolute;
+          @include mixin.absCenter;
+          font-size: 0.7rem;
+          line-height: 100%;
+          font-weight: 1000;
+          color: black;
+        }
+      }
+    }
+  }
+
+  &-item {
+    height: 100%;
+
+    position: relative;
+
+    img {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .project {
+    &-layout {
+      padding: 1rem;
+      padding-top: 5rem;
+      grid-template-columns: 100%;
+      grid-template-rows: 35vh 1fr;
+    }
+
+    &-info {
+      &_top {
+        grid-template-columns: 1fr auto;
+
+        .btn-close {
+          position: fixed;
+          top: 1rem;
+          right: 1rem;
+          z-index: 5;
+        }
+      }
+
+      &_middle {
+        align-items: flex-start;
+        gap: 1rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+li {
+  display: block;
+
+  /* background-color: yellow; */
+  transition: all 0.3s;
+
+  .cart-item {
+    h3 {
+      margin: 0.7rem 0 0.4rem 0;
+    }
+
+    p {
+      line-height: 1rem;
+    }
+    &_img {
+      height: 15rem;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+
+      img {
+        // height: 4rem;
+        // display: none;
+        position: absolute;
+        transition: all 0.3s;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        /* z-index: 0; */
+      }
+
+      //   @media (max-width: 1440px) {
+      //     height: 32rem;
+      //   }
+    }
+
+    &:hover img {
+      transition: all 0.3s;
+      transform: scale(1.07);
+    }
+  }
+}

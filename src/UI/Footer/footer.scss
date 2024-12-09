@@ -1,0 +1,19 @@
+.footer {
+  /* background-color: red; */
+  padding-top: 48px;
+  border-top: 1px solid #272727;
+
+  p {
+    display: flex;
+    align-items: center;
+    /* gap: 10px; */
+    flex-wrap: wrap;
+    color: #767676;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+    /* & svg {
+		margin-right: 10px;
+	} */
+  }
+}

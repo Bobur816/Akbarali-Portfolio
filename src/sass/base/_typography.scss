@@ -1,0 +1,56 @@
+.text {
+  &_lg {
+    font-size: 0.9rem;
+  }
+  &_md {
+    font-size: 0.8rem;
+  }
+  &_sm {
+    font-size: 0.7rem;
+  }
+
+  &_gray {
+    color: var(--color-gray);
+  }
+}
+
+.font {
+  &_semibold {
+    font-weight: 600;
+  }
+
+  &_medium {
+    font-weight: 500;
+  }
+
+  &_normal {
+    font-weight: 400;
+  }
+
+  &_light {
+    font-weight: 300;
+  }
+}
+
+.section__title {
+  font-family: Inter;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 2.8rem; /* 140% */
+  letter-spacing: -0.1rem;
+  &_sm {
+    font-family: Figtree;
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 1.2rem;
+  }
+}
+
+.text-center {
+}
+
+@media (max-width: 768px) {
+}
