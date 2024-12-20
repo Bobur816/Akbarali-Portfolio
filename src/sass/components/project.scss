@@ -40,6 +40,16 @@
 
   &-carousel {
     border-radius: 0.8rem;
+
+    &-empty {
+      background-color: var(--color-primary-dark);
+      height: 100%;
+      @include mixin.center;
+
+      h4 {
+        font-size: 5rem;
+      }
+    }
   }
 
   &-info {

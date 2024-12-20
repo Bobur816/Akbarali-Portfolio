@@ -6,7 +6,7 @@ import useClickOutside from "../hooks/useClickOutside";
 const ModalContext = createContext<any>(undefined);
 
 function Modal({ children }: { children: ReactElement | any }) {
-  const [openName, setOpenName] = useState("project-form");
+  const [openName, setOpenName] = useState("");
 
   const close = () => setOpenName("");
   const open = setOpenName;
@@ -23,16 +23,16 @@ function Open({ opens: openWindowName, children }: { opens: string; children: Re
 function Window({ name, children }: { name: string; children: ReactElement }) {
   const { close, openName } = useContext(ModalContext);
 
-  const { ref } = useClickOutside(close);
+  //   const { ref } = useClickOutside(close);
 
   if (name !== openName) return null;
   return createPortal(
     <div className="overlay">
-      <div className="modal" ref={ref}>
+      <div className="modal">
         <button className="modal-x" onClick={close}>
           <HiXMark />
         </button>
-        <div>{cloneElement(children, { onCloseModal: close })}</div>
+        <div className="modal__wrapper">{cloneElement(children, { onCloseModal: close })}</div>
       </div>
     </div>,
     document.body

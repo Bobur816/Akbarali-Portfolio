@@ -1,4 +1,7 @@
-function ImageCarouselAdmin({ imageCollection }: { imageCollection: [] }) {
+import Modal from "../../UI/Modal";
+import UpdateImageCollection from "./UpdateImageCollection";
+
+function ImageCarouselAdmin({ imageCollection, name }: { imageCollection: []; name: string }) {
   return (
     <div className="collection">
       <ul className="box__images">
@@ -8,7 +11,14 @@ function ImageCarouselAdmin({ imageCollection }: { imageCollection: [] }) {
           </li>
         ))}
       </ul>
-      <button>Edit</button>
+      <Modal>
+        <Modal.Open opens="upgrade-image-collection">
+          <button>Edit</button>
+        </Modal.Open>
+        <Modal.Window name="upgrade-image-collection">
+          <UpdateImageCollection images={imageCollection} name={name} />
+        </Modal.Window>
+      </Modal>
     </div>
   );
 }

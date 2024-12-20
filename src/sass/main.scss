@@ -6,6 +6,41 @@
 @use "../layouts/AppLayout/appLayout";
 @use "../sass/components/copyEmailButton";
 
+.add-btn,
+.gray-btn,
+.remove-btn {
+  @include mixin.center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  padding: 0.8rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s;
+  &:hover {
+    opacity: 0.8;
+  }
+
+  svg {
+    font-size: 1.2rem;
+  }
+}
+
+.add-btn {
+  background-color: var(--color-primary-green);
+}
+
+.remove-btn {
+  background-color: red;
+}
+
+.gray-btn {
+  background-color: #2e2e2e;
+}
+
+.add-image-btn {
+  height: 5rem;
+  aspect-ratio: 2/1;
+}
+
 .login {
   height: 100%;
 
@@ -68,46 +103,164 @@
 }
 
 .modal {
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: var(--color-grey-0);
-  border-radius: var(--border-radius-lg);
+  // background-color: var(--color-grey-0);
+  // background-color: red;
+  border-radius: 1.5rem;
   box-shadow: var(--shadow-lg);
-  padding: 3.2rem 4rem;
+  padding: 2rem;
   transition: all 0.5s;
+  background-color: var(--color-primary-dark);
+  // background-color: yellow;
+  height: fit-content;
+  width: fit-content;
 
   &-x {
     background: none;
     border: none;
-    padding: 0.4rem;
-    border-radius: var(--border-radius-sm);
-    transform: translateX(0.8rem);
+    // padding: 0.4rem;
     transition: all 0.2s;
     position: absolute;
-    top: 1.2rem;
-    right: 1.9rem;
+    @include mixin.center;
+    top: 1rem;
+    padding: 0.2rem;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+
+    svg {
+      @include mixin.fullImg;
+    }
 
     &:hover {
-      background-color: var(--color-grey-100);
+      background-color: var(--color-primary-black);
+    }
+  }
+
+  &__wrapper {
+    // border: 1px solid red;
+    max-height: 80vh;
+    max-width: 80vw;
+
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      display: none;
     }
 
-    & svg {
-      width: 2.4rem;
-      height: 2.4rem;
-      /* Sometimes we need both */
-      /* fill: var(--color-grey-500);
-    stroke: var(--color-grey-500); */
-      color: var(--color-grey-500);
-    }
+    // width: 90svw;
+    // padding: 3rem;
+
+    // .form-div {
+    //   // width: 100%;
+    // }
   }
 }
 
 .form {
-  background-color: white;
-  height: 80svh;
-  width: 90svw;
+  width: 100%;
+  &__wrapper {
+    height: 80svh;
+    width: 80vw;
+    @include mixin.center;
+    gap: 5rem;
+    padding: 0 2rem;
+    flex-direction: column;
+    height: fit-content;
+  }
+  &__row {
+    // background-color: red;
+
+    display: grid;
+    // width: 100%;
+    align-items: center;
+    grid-template-columns: 10rem 2fr 1.2fr;
+    gap: 2.4rem;
+
+    padding: 0.5rem 0;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--color-grey-100);
+    }
+
+    &:has(button) {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1.2rem;
+    }
+  }
+
+  &__label {
+    font-weight: 500;
+  }
+
+  &__input {
+    border: 1px solid var(--color-primary-black);
+    background-color: var(--color-primary-black);
+    border-radius: 0.5rem;
+    padding: 0.8rem;
+    font-size: 0.9rem;
+    box-shadow: var(--shadow-sm);
+    color: var(--color-white);
+  }
+
+  &__file-input {
+    // font-size: 1.4rem;
+    // border-radius: var(--border-radius-sm);
+
+    &::file-selector-button {
+      font: inherit;
+      font-weight: 500;
+      padding: 0.8rem 1.2rem;
+      margin-right: 1.2rem;
+      border-radius: 0.5rem;
+      border: none;
+      color: var(--color-white);
+      background-color: var(--color-primary-black);
+      cursor: pointer;
+      transition: color 0.2s, background-color 0.2s;
+
+      &:hover {
+        background-color: #575757;
+      }
+    }
+  }
+
+  &__textarea {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+    border: 1px solid var(--color-primary-black);
+    background-color: var(--color-primary-black);
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-sm);
+    width: 100%;
+    height: 8rem;
+    color: var(--color-white);
+    resize: none;
+  }
+
+  &__error {
+    font-size: 0.7rem;
+    color: red;
+  }
+
+  &__btns {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    width: 85%;
+  }
 }
 
 .admin {
@@ -117,6 +270,10 @@
     background-color: var(--color-primary-dark);
     border-radius: 0.6rem;
     padding: 2rem 1rem;
+
+    &_top {
+      @include mixin.spaced;
+    }
   }
 
   &__projects {
@@ -305,6 +462,47 @@
         opacity: 1;
       }
     }
+  }
+}
+
+.update-img {
+  // background-color: red;
+  min-width: 30rem;
+  padding: 1rem;
+
+  .add-btn {
+    margin-top: 2rem;
+    width: 100%;
+  }
+
+  &-show {
+    // height: 10rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: var(--color-gray-back);
+    overflow-y: scroll;
+
+    border-radius: 1.5rem;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    li {
+      height: 5rem;
+
+      img {
+        max-height: 100%;
+        border-radius: 1rem;
+      }
+    }
+  }
+
+  form {
+    margin-top: 3rem;
   }
 }
 

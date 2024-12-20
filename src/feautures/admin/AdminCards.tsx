@@ -9,7 +9,7 @@ function AdminCards({ projects, isLoading }: CardProps) {
 
   return (
     <ul className="admin__projects">
-      {oneProject?.map((project) => (
+      {projects?.map((project) => (
         <AdminCard project={project} key={project.id} />
       ))}
     </ul>

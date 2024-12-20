@@ -16,21 +16,29 @@ import { Navigation, Pagination } from "swiper/modules";
 
 const ImageCarousel: React.FC<{ images: string[] }> = ({ images }) => {
   return (
-    <Swiper
-      modules={[Navigation, Pagination]}
-      className="image-carousel"
-      spaceBetween={0} // Slaydlarga bo'shliq
-      slidesPerView={1} // Bir vaqtning o'zida ko'rsatiladigan slaydlar soni
-      navigation // Navigatsiya tugmachalari
-      pagination={{ clickable: true }} // Pagination qo'shish
-      loop // Slaydlar cheksiz aylanishi
-    >
-      {images.map((imageUlr, index) => (
-        <SwiperSlide key={index} className="project-item">
-          <img src={imageUlr} />
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <>
+      {images.length > 1 ? (
+        <Swiper
+          modules={[Navigation, Pagination]}
+          className="image-carousel"
+          spaceBetween={0} // Slaydlarga bo'shliq
+          slidesPerView={1} // Bir vaqtning o'zida ko'rsatiladigan slaydlar soni
+          navigation // Navigatsiya tugmachalari
+          pagination={{ clickable: true }} // Pagination qo'shish
+          loop // Slaydlar cheksiz aylanishi
+        >
+          {images.map((imageUlr, index) => (
+            <SwiperSlide key={index} className="project-item">
+              <img src={imageUlr} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      ) : (
+        <div className="project-carousel-empty">
+          <h4 className="">No images yet</h4>
+        </div>
+      )}
+    </>
   );
 };
 
